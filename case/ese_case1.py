@@ -1,7 +1,7 @@
 import os
 import time
 import unittest  # 导入单元测试包
-import baseinfo
+import resources
 
 import paramunittest
 from selenium import webdriver
@@ -100,7 +100,7 @@ class EseCase1(unittest.TestCase):
 
         self.options.add_experimental_option('prefs', prefs)
         self.driver = webdriver.Chrome(options=self.options)
-        self.baseUrl = baseinfo.base_url
+        self.baseUrl = resources.base_url
         self.driver.maximize_window()
         self.driver.get(self.baseUrl)
         time.sleep(20)
@@ -291,7 +291,7 @@ class EseCase1(unittest.TestCase):
 
 
     def get_screenshot(self):
-        file_path = os.path.join(proDir, "testFile", "shots")
+        file_path = os.path.join(proDir, "report", "shots")
         if not os.path.exists(file_path):
             os.mkdir(file_path)
         shot_name = "screenshot_%s.png" % now

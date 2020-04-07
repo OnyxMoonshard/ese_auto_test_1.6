@@ -6,6 +6,7 @@ import paramunittest
 from selenium import webdriver
 from selenium.webdriver import ActionChains
 
+import resources
 from until import getDir
 from until.common import get_excel_value
 
@@ -61,7 +62,7 @@ class EseCase6(unittest.TestCase):
         self.options.add_experimental_option('prefs', prefs)
         self.driver = webdriver.Chrome(options=self.options)
         # self.driver.delete_all_cookies()
-        self.baseUrl = 'http://106.39.97.90:17885/#/tools/uk/1'
+        self.baseUrl = resources.base_url
         self.driver.maximize_window()
         self.driver.get(self.baseUrl)
         time.sleep(20)
@@ -173,7 +174,7 @@ class EseCase6(unittest.TestCase):
 
         time.sleep(10)
     def get_screenshot(self):
-        file_path = os.path.join(proDir, "testFile", "shots")
+        file_path = os.path.join(proDir, "report", "shots")
         if not os.path.exists(file_path):
             os.mkdir(file_path)
         shot_name = "screenshot_%s.png" % now
@@ -183,8 +184,8 @@ class EseCase6(unittest.TestCase):
     def tearDown(self):
         browser = self.driver
         self.get_screenshot()
-        # browser.close()
-        # browser.quit()
+        browser.close()
+        browser.quit()
 
     def test_main(self):
         self.index()

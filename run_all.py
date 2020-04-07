@@ -1,13 +1,13 @@
 import os
 import time
 import unittest
-import baseinfo
+import resources
 import threading
 
 
 from until import common
 from until import getDir
-from HTMLTestReportCN import HTMLTestRunner
+from until.HTMLTestReportCN import HTMLTestRunner
 
 proDir = getDir.proDir
 now = time.strftime("%Y_%m_%d_%H%M%S")
@@ -25,10 +25,10 @@ def send_report_by_email(path,filename,result):
 if __name__ == "__main__":
 
     # setting report dir
-    ReportDir = os.path.join(proDir,baseinfo.test_report )
+    ReportDir = os.path.join(proDir, resources.test_report)
 
     # setting case dir
-    CaseDir = os.path.join(proDir, baseinfo.case_dir)
+    CaseDir = os.path.join(proDir, resources.case_dir)
 
     # search test case
     discover = unittest.defaultTestLoader.discover(start_dir=CaseDir, pattern="ese_case*.py")

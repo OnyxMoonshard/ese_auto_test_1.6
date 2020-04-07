@@ -14,7 +14,7 @@ from email.header import Header
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 
-import baseinfo
+import resources
 
 import xlrd
 from selenium import webdriver
@@ -139,10 +139,10 @@ def send_Mail(path,file_new,result):
     mail_body = f.read()
     f.close()
     try:
-        smtp = smtplib.SMTP(baseinfo.Smtp_Server, 25)
-        sender = baseinfo.Smtp_Sender
-        password = baseinfo.Smtp_Sender_Password
-        receiver = baseinfo.Smtp_Receiver
+        smtp = smtplib.SMTP(resources.Smtp_Server, 25)
+        sender = resources.Smtp_Sender
+        password = resources.Smtp_Sender_Password
+        receiver = resources.Smtp_Receiver
         smtp.login(sender, password)
         msg = MIMEMultipart()
         # 编写html类型的邮件正文，MIMEtext()用于定义邮件正文
