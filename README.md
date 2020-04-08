@@ -36,7 +36,27 @@
 - venv 系统环境和依赖目录
 - run_all.py 工程入口类
 
+## 操作说明
+1. windows7 以上
+2. python 3.7 以上
+下载地址：https://www.python.org/downloads/windows/
+3. 配置Python环境变量
+4. PyCharm 2019.3.3 [Community] 版本以上
+下载地址：https://www.jetbrains.com/pycharm/download/#section=windows
+5. Pycharm clone 源码：[VCS]-[Get From Version Control]-填入clone地址
+6. 配置Python 解释器 [File]-[Settings]-[Project Interpreter]-[齿轮图标]-[Add]
+    - [Base Interpreter]选择本机Python.exe所在目录
+    - [Location] 选择clone下来的工程venv目录
+7. Pycharm 配置环境组件[File]-[Settings]-[Project Interpreter]-[+图标] 搜索并安装如下插件：
+    - HTMLTestRunner-Python3
+    - ParamUnittest
+    - selenium
+    - xlrd
+    - unittest2
+8. 右键run_all.py 并运行
 
+## 特别说明
+如果需要修改源码，请每次提交创建新的分支，分支测试通过后请申请分支合并主干请求，等待管理员审核后才能合并
 ## 维护人员
 
 姓名：宋士恩  
