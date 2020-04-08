@@ -46,7 +46,7 @@
 5. Pycharm clone 源码：[VCS]-[Get From Version Control]-填入clone地址
 6. 配置Python 解释器 [File]-[Settings]-[Project Interpreter]-[齿轮图标]-[Add]
     - [Base Interpreter]选择本机Python.exe所在目录
-    - [Location] 选择clone下来的工程venv目录
+    - [Location] 选择clone下来的工程venv目录，如果没有此目录请手动创建，如果目录下已经有任何文件请手动删除
 7. Pycharm 配置环境组件[File]-[Settings]-[Project Interpreter]-[+图标] 搜索并安装如下插件：
     - HTMLTestRunner-Python3
     - ParamUnittest
