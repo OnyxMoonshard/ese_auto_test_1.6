@@ -9,7 +9,7 @@ from selenium import webdriver
 from until import getDir
 from until.common import get_excel_value
 
-proDir = getDir.proDir
+# proDir = getDir.proDir
 now = time.strftime("%Y_%m_%d %H:%M:%S")
 case1 = get_excel_value("test_data.xlsx", "case1")
 
@@ -99,7 +99,7 @@ class EseCase1(unittest.TestCase):
                  "profile.default_content_setting_values.automatic_downloads": 1}
 
         self.options.add_experimental_option('prefs', prefs)
-        self.driver = webdriver.Chrome(options=self.options)
+        self.driver = webdriver.Chrome(options=self.options,executable_path=resources.driverPath)
         self.baseUrl = resources.base_url
         self.driver.maximize_window()
         self.driver.get(self.baseUrl)
@@ -274,6 +274,7 @@ class EseCase1(unittest.TestCase):
         browser.switch_to.default_content()
         ese_pay_pay_btn = browser.find_elements_by_xpath('//*[@class="pay-with-stripe"]')[0]
         ese_pay_pay_btn.click()
+
         time.sleep(20)
 
     def printDetail(self):
@@ -290,17 +291,17 @@ class EseCase1(unittest.TestCase):
 
 
 
-    def get_screenshot(self):
-        file_path = os.path.join(proDir, "report", "shots")
-        if not os.path.exists(file_path):
-            os.mkdir(file_path)
-        shot_name = "screenshot_%s.png" % now
-        shot_path = os.path.join(proDir, file_path, shot_name)
-        self.driver.get_screenshot_as_file(shot_path)
+    # def get_screenshot(self):
+    #     file_path = os.path.join(proDir, "report", "shots")
+    #     if not os.path.exists(file_path):
+    #         os.mkdir(file_path)
+    #     shot_name = "screenshot_%s.png" % now
+    #     shot_path = os.path.join(proDir, file_path, shot_name)
+    #     self.driver.get_screenshot_as_file(shot_path)
 
     def tearDown(self):
         browser = self.driver
-        self.get_screenshot()
+        # self.get_screenshot()
         browser.close()
         browser.quit()
 

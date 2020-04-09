@@ -22,7 +22,7 @@ from selenium import webdriver
 from until import getDir
 
 
-proDir = getDir.proDir
+proDir = resources.proDir
 
 
 class PyExcel:

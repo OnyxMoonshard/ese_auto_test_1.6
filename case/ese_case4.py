@@ -10,7 +10,7 @@ import resources
 from until import getDir
 from until.common import get_excel_value
 
-proDir = getDir.proDir
+# proDir = getDir.proDir
 now = time.strftime("%Y_%m_%d %H:%M:%S")
 case4 = get_excel_value("test_data.xlsx", "case4")
 
@@ -192,17 +192,17 @@ class EseCase4(unittest.TestCase):
 
         time.sleep(10)
 
-    def get_screenshot(self):
-        file_path = os.path.join(proDir, "report", "shots")
-        if not os.path.exists(file_path):
-            os.mkdir(file_path)
-        shot_name = "screenshot_%s.png" % now
-        shot_path = os.path.join(proDir, file_path, shot_name)
-        self.driver.get_screenshot_as_file(shot_path)
+    # def get_screenshot(self):
+    #     file_path = os.path.join(proDir, "report", "shots")
+    #     if not os.path.exists(file_path):
+    #         os.mkdir(file_path)
+    #     shot_name = "screenshot_%s.png" % now
+    #     shot_path = os.path.join(proDir, file_path, shot_name)
+    #     self.driver.get_screenshot_as_file(shot_path)
 
     def tearDown(self):
         browser = self.driver
-        self.get_screenshot()
+        # self.get_screenshot()
         browser.close()
         browser.quit()
 

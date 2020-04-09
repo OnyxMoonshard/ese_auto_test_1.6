@@ -6,10 +6,11 @@ import threading
 
 
 from until import common
-from until import getDir
+# from until import getDir
 from until.HTMLTestReportCN import HTMLTestRunner
 
-proDir = getDir.proDir
+proDir = resources.proDir
+print("proDir:"+proDir)
 now = time.strftime("%Y_%m_%d_%H%M%S")
 
 def send_report_by_email(path,filename,result):
@@ -39,8 +40,8 @@ if __name__ == "__main__":
 
     runner = HTMLTestRunner(stream=fp,
                             title="ESETestReport",
-                            description="",
-                            tester="song",
+                            description=resources.description,
+                            tester=resources.tester,
                             verbosity=2)
 
     result = runner.run(discover)
