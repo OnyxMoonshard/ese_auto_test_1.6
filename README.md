@@ -18,14 +18,15 @@
 - excel操作组件：xlrd
 
 ## 工程结构
-
 - case 测试用例模板目录，测试用例命名规则: 项目名_case_测试用例序号 
     - ese_case1.py 英国至非中国多商品单一收货人匿名下单
     - ese_case3.py 英国至非中国多商品单一收货人登录后下单
     - ese_case4.py 英国至非中国MY PARCELS OVERVIEW
     - ese_case5.py 英国至非中国用户注册
     - ese_case6.py 英国至非中国忘记密码+重置密码
-- pending 正在调试中测试用例目录
+- dist 打包后的可执行文件及依赖目录
+    - run_all\run_all.exe 打包后的可执行文件
+- driver 浏览器驱动存放目录
 - report 测试报告生成目录
     - shots 截图目录
 - resources 系统资源目录
@@ -34,7 +35,7 @@
     - test_data.xlsx 业务数据文件
 - until 系统工具类目录
 - venv 系统环境和依赖目录
-- run_all.py 工程入口类
+- run_all.py 程序主入口类
 
 ## 操作说明
 ### 开发环境配置
