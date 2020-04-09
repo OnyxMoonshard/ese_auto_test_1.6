@@ -37,6 +37,7 @@
 - run_all.py 工程入口类
 
 ## 操作说明
+### 开发环境配置
 1. windows7 以上
 2. python 3.7 以上
 下载地址：https://www.python.org/downloads/windows/
@@ -55,8 +56,22 @@
     - unittest2
 8. 右键run_all.py 并运行
 
+### 快速运行
+1. 操作系统：windows 7 以上
+2. Python解释器：Python 3.7 以上
+下载地址：https://www.python.org/downloads/windows/
+3. 配置Python环境变量
+4. clone源码到本地任意目录, 比如：C:\ese
+5. 进入本地目录C:\ese\resources,记事本打开_init_.py编辑配置文件
+    - 将proDir 的值修改为本地工程根目录, 比如：C:\ese
+    - tester 为测试报告中显示的测试人员姓名，可以根据情况修改
+    - Smtp 开头的参数为发送测试报告的邮件服务器配置，可以根据情况修改，其中Smtp_Receiver和Smtp_Receiver_pre 支持多个邮箱，多个邮箱之间用,分隔
+6. 配置完成后在C:\ese\testFile\test_data.xlsx 表格中录入测试数据并保存
+7. 进入C:\ese\dist\run_all, 双击run_all.exe运行所有测试用例即可
+
 ## 特别说明
 如果需要修改源码，请每次提交创建新的分支，分支测试通过后请申请分支合并主干请求，等待管理员审核后才能合并
+
 ## 维护人员
 
 姓名：宋士恩  
