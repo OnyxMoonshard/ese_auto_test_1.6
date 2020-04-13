@@ -70,6 +70,14 @@
 6. 配置完成后在C:\ese\testFile\test_data.xlsx 表格中录入测试数据并保存
 7. 进入C:\ese\dist\run_all, 双击run_all.exe运行所有测试用例即可
 
+### 快速体验
+请使用远程桌面登录内网测试服务器
+- 地址:192.168.100.66
+- 用户名: test
+- 密码: Ecms.2020
+- 进入F:\project\ese_auto_test\dist\run_all
+- 双击 run_all.exe 
+
 ## 特别说明
 如果需要修改源码，请每次提交创建新的分支，分支测试通过后请申请分支合并主干请求，等待管理员审核后才能合并
 
