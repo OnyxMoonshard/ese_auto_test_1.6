@@ -183,7 +183,7 @@ class EseCase6(unittest.TestCase):
 
     def tearDown(self):
         browser = self.driver
-        self.get_screenshot()
+        # self.get_screenshot()
         browser.close()
         browser.quit()
 

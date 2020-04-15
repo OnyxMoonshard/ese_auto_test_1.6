@@ -99,6 +99,8 @@ class EseCase1(unittest.TestCase):
                  "profile.default_content_setting_values.automatic_downloads": 1}
 
         self.options.add_experimental_option('prefs', prefs)
+        self.options.add_argument('--no-sandbox')  # 解决DevToolsActivePort文件不存在的报错
+        # self.options.add_argument('--headless')  # 浏览器不提供可视化页面. linux下如果系统不支持可视化不加这条会启动失败
         self.driver = webdriver.Chrome(options=self.options,executable_path=resources.driverPath)
         self.baseUrl = resources.base_url
         self.driver.maximize_window()
