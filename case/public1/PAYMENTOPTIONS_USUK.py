@@ -1,7 +1,7 @@
 # coding=utf-8
 import time
 import unittest
-
+import time
 
 class PublicCase6_1(unittest.TestCase):
 
