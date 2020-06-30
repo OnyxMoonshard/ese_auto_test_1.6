@@ -1,10 +1,10 @@
 #-*-coding:utf-8-*-
 #测试用例配置参数
 
-base_url = "http://106.39.97.90:17885/#/tools/uk/1"
+base_url = "http://192.168.103.62/#/tools/us/1"
 
 # 项目根目录
-proDir = "F:/project/ese_auto_test"
+proDir = "D:/Git download/ese_auto_test_1.6"
 
 # 驱动目录
 driverPath=proDir+"\driver\chromedriver.exe"
@@ -18,8 +18,8 @@ tester = "auto_test"
 Smtp_Server = 'smtp.qiye.163.com'
 Smtp_Sender = 'jenkins@ecmsglobal.com'
 Smtp_Sender_Password = 'Ecms@2019xx'
-#Smtp_Receiver = ['[songshien@ecmsglobal.com]','[liuyi@ecmsglobal.com]','[shiht@ecmsglobal.com]']
-Smtp_Receiver = ['auto_test@ecmsglobal.com']
+Smtp_Receiver = ['[liuyi@ecmsglobal.com]']
+#Smtp_Receiver = ['auto_test@ecmsglobal.com']
 Smtp_Receiver_pre = ['']
 
 #测试邮箱配置
@@ -35,4 +35,4 @@ test_report = "report"
 
 #测试用例及报告路径配置参数
 # test_dir = ‘D:\\WorkSpace\\Python\\UiTest\\test_case‘
-# test_report = ‘D:\\WorkSpace\\Python\\UiTest\\test_report\\‘
+test_report = 'D:\\Git download\\ese_auto_test_1.6\\report'

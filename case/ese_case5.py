@@ -88,7 +88,7 @@ class EseCase5(unittest.TestCase):
         ese_height.send_keys(str(self.ese_height))
         ese_quotenow = browser.find_element_by_id('submit')
         ese_quotenow.click()
-        time.sleep(10)
+        time.sleep(3)
 
     def sign_up(self):
         '''sign_up'''
@@ -100,7 +100,9 @@ class EseCase5(unittest.TestCase):
             ese_my_account = browser.find_elements_by_xpath('//*[@class="txt"]')[2]
         actions = ActionChains(browser)
         actions.move_to_element(ese_my_account).perform()
-        time.sleep(10)
+        time.sleep(50)
+
+
         ese_loginout = browser.find_elements_by_xpath('//*[@class="menu"]/li')[0]
         if(str(ese_loginout.text).__eq__('Login Out')):
             browser.execute_script("arguments[0].click();", ese_loginout)
@@ -115,17 +117,19 @@ class EseCase5(unittest.TestCase):
         # if(str(self.gender).__eq__('Ms.')):
         #     gender = browser.find_elements_by_xpath('//*[@class="el-scrollbar__view el-select-dropdown__list"][1]/li')[1]
         #     browser.execute_script("arguments[0].click();", gender)
-        forename = browser.find_elements_by_xpath('//*[@class="el-input__inner"]')[15]
+
+        forename = browser.find_element_by_xpath('//*[@placeholder="Forename"]')
         forename.send_keys(str(self.forename))
-        surname = browser.find_elements_by_xpath('//*[@class="el-input__inner"]')[16]
+        surname = browser.find_element_by_xpath('//*[@placeholder="Surname"]')
         surname.send_keys(str(self.surname))
-        email = browser.find_elements_by_xpath('//*[@class="el-input__inner"]')[17]
+        email = browser.find_element_by_xpath('//*[@placeholder="Input your account"]')
         email.send_keys(str(self.email))
         time.sleep(10)
         ese_getcaptcha_btn = browser.find_elements_by_xpath('//*[@class="el-button el-button--primary"]')[1]
         ese_getcaptcha_btn.click()
         password = browser.find_elements_by_xpath('//*[@class="el-input__inner"]')[20]
         password.send_keys(str(self.password))
+
         confirmpassword = browser.find_elements_by_xpath('//*[@class="el-input__inner"]')[21]
         confirmpassword.send_keys(str(self.confirmpassword))
         invitationcode = browser.find_elements_by_xpath('//*[@class="el-input__inner"]')[22]
