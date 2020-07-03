@@ -12,8 +12,8 @@ from until.common import get_excel_value
 
 import sys
 
-from case.public1.ADDRESSDETAILS_OTHER_WAREHOUSE_NONLOGIN import PublicCase3
-from case.public1.PARCEL_DETAILS_MULTIPLY import PublicCase4
+from case.public1.ADDRESSDETAILS_OTHER_WAREHOUSE_NONLOGIN import PublicCase2_3
+from case.public1.PARCEL_DETAILS_MULTIPLY import PublicCase3_2
 from case.public1.CUSTOMSDDTAILS_US_NOCOMMERCIALINVOICE import PublicCase4_1
 from case.public1.REVIEWMYORDER import PublicCase5_1
 from case.public1.PAYMENTOPTIONS_USUK import PublicCase6_1
@@ -26,7 +26,7 @@ case2 = get_excel_value("test_data.xlsx", "case2")
 
 @paramunittest.parametrized(*case2)
 class EseCase2(unittest.TestCase):
-    '''英国至非中国多商品单一收货人匿名下单'''
+    '''美国至非中国多商品单一收货人匿名下单'''
 
     def setParameters(self, case_name, ese_from_postcode, ese_to_postcode, ese_weight, ese_length,
                       ese_width, ese_height, ese_shipper_contactname, ese_shipper_company, ese_shipper_addr1,
@@ -99,13 +99,15 @@ class EseCase2(unittest.TestCase):
         browser = self.driver
         ese_to = browser.find_element_by_xpath('//*[@id="areaEnd"]')
         browser.execute_script("arguments[0].click();", ese_to)
-        ese_to1 = browser.find_element_by_xpath('/html/body/div[2]/div[1]/div[1]/ul/li[2]/span')
+
+        ese_to1 = browser.find_element_by_xpath('/html/body/div[2]/div[1]/div[1]/ul/li[10]/span')
         browser.execute_script("arguments[0].click();", ese_to1)
 
         ese_from_postcode = browser.find_element_by_id('areaStartPost')
         ese_from_postcode.send_keys(str(self.ese_from_postcode))
+
         ese_to_postcode = browser.find_element_by_id('areaEndPost')
-        ese_to_postcode.send_keys(int(self.ese_to_postcode))
+        ese_to_postcode.send_keys(str(self.ese_to_postcode))
         ese_weight = browser.find_element_by_id('grossWeight')
         ese_weight.send_keys(str(self.ese_weight))
         ese_length = browser.find_element_by_id('length')
@@ -137,7 +139,7 @@ class EseCase2(unittest.TestCase):
 
     def test_main(self):
         self.index()
-        PublicCase3.addressdetails_other_warehouse_nonlogin(self, self.ese_shipper_contactname, self.ese_shipper_company,
+        PublicCase2_3.addressdetails_other_warehouse_nonlogin(self, self.ese_shipper_contactname, self.ese_shipper_company,
                                                             self.ese_shipper_addr1,
                                                             self.ese_shipper_addr2, self.ese_shipper_city,
                                                             self.ese_shipper_state, self.ese_shipper_zipcode,
@@ -149,7 +151,7 @@ class EseCase2(unittest.TestCase):
                                                             self.ese_receiver_provnice, self.ese_receiver_zipcode,
                                                             self.ese_receiver_email,
                                                             self.ese_receiver_phone)
-        PublicCase4.parcel_details_multiply(self,self.ese_item_name,self.ese_item_weight,self.ese_item_quantity,self.ese_unit_value,self.ese_item_details)
+        PublicCase3_2.parcel_details_multiply(self,self.ese_item_name,self.ese_item_weight,self.ese_item_quantity,self.ese_unit_value,self.ese_item_details)
         PublicCase4_1.customsddtails_us_nocommercialinvoice(self)
         PublicCase5_1.reviewmyorder(self)
         PublicCase6_1.paymentoptions_usuk(self,self.ese_pay_cardno,self.ese_pay_youxiaoqi,self.ese_pay_cvc,self.ese_pay_postcode)

@@ -3,9 +3,9 @@ import time
 import unittest
 
 
-class PublicCase3_2(unittest.TestCase):
+class PublicCase3_1(unittest.TestCase):
 
-        def parcel_details_multiply(self,ese_item_name,ese_item_weight,ese_item_quantity,ese_unit_value,
+        def parcel_details_single(self,ese_item_name,ese_item_weight,ese_item_quantity,ese_unit_value,
                                            ese_item_details):
                 '''填写信息，复制sku,修改内件名称与内件详情'''
                 browser = self.driver
@@ -26,17 +26,6 @@ class PublicCase3_2(unittest.TestCase):
 
                 ese_country_of_origin = browser.find_element_by_xpath('//*[@class="el-select-dropdown__item"][8]/span')
                 browser.execute_script("arguments[0].click();", ese_country_of_origin)
-
-                ese_copy_btn = browser.find_element_by_xpath('//*[@class="el-tooltip el-icon-document item"]')
-                browser.execute_script("arguments[0].click();", ese_copy_btn)
-
-                ese_item_name2 = browser.find_element_by_xpath('//*[@id="app"]/div/div[2]/section/div/div/div[2]/div/form/div[2]/div[1]/div[1]/div/div[1]/input')
-                ese_item_name2.clear()
-                ese_item_name2.send_keys('DEVIL MAY CAY5')
-
-                ese_item_details2 = browser.find_element_by_xpath('//*[@id="app"]/div/div[2]/section/div/div/div[2]/div/form/div[2]/div[2]/div[1]/div/div/input')
-                ese_item_details2.clear()
-                ese_item_details2.send_keys('HD Collection ')
 
                 ese_promise  = browser.find_element_by_xpath('//*[@id="app"]/div/div[2]/section/div/div/div[2]/div/div/div/div[1]/label/span[1]')
                 ese_promise.click()

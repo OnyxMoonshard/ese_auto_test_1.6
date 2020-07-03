@@ -3,7 +3,7 @@ import time
 import unittest
 
 
-class PublicCase2(unittest.TestCase):
+class PublicCase3_2(unittest.TestCase):
 
     def aDDRESSDETAILS_CN_WAREHOUSE_NONLOGIN(self,ese_shipper_contactname,ese_shipper_company,ese_shipper_addr1,
                         ese_shipper_addr2,ese_shipper_city,ese_shipper_state,ese_shipper_zipcode,ese_shipper_email,

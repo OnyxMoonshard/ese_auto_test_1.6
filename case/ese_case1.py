@@ -234,7 +234,7 @@ class EseCase1(unittest.TestCase):
 
     def test_main(self):
         self.index()
-        PublicCase1.aDDRESSDETAILS_CN_WAREHOUSE_NONLOGIN(self, self.ese_shipper_contactname, self.ese_shipper_company,
+        PublicCase3_2.aDDRESSDETAILS_CN_WAREHOUSE_NONLOGIN(self, self.ese_shipper_contactname, self.ese_shipper_company,
                                                          self.ese_shipper_addr1,
                                                          self.ese_shipper_addr2, self.ese_shipper_city,
                                                          self.ese_shipper_state, self.ese_shipper_zipcode,

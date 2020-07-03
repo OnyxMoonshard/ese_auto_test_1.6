@@ -1,11 +1,11 @@
 # coding=utf-8
 import time
 import unittest
+from selenium.webdriver import ActionChains
 
+class PublicCase2_4(unittest.TestCase):
 
-class PublicCase2_3(unittest.TestCase):
-
-    def addressdetails_other_warehouse_nonlogin(self, ese_shipper_contactname, ese_shipper_company, ese_shipper_addr1,
+    def addressdetails_other_warehouse_login(self, ese_shipper_contactname, ese_shipper_company, ese_shipper_addr1,
                                                 ese_shipper_addr2, ese_shipper_city, ese_shipper_state,
                                                 ese_shipper_zipcode, ese_shipper_email,
                                                 ese_shipper_phone, ese_receiver_contactname, ese_receiver_company,
@@ -13,8 +13,46 @@ class PublicCase2_3(unittest.TestCase):
                                                 ese_receiver_city, ese_receiver_district, ese_receiver_provnice,
                                                 ese_receiver_zipcode, ese_receiver_email,
                                                 ese_receiver_phone):
-        '''到中国、未登录、Warehouse'''
+        '''到中国、登录、Warehouse'''
         browser = self.driver
+
+        #悬停到MyAccount
+        #登录
+        # ese_my_account = browser.find_elements_by_xpath('//*[@class="txt"]')[1]
+        ese_my_account = browser.find_element_by_xpath('//*[@id="app"]/div/div[1]/div[1]/div/div/div/div[3]/span')
+        actions = ActionChains(browser)
+        actions.move_to_element(ese_my_account).perform()
+        time.sleep(5)
+
+        # ese_sign_in = browser.find_elements_by_xpath('//*[@class="menu"]/li')[0]
+        ese_sign_in = browser.find_element_by_xpath('//*[@id="app"]/div[2]/div[1]/div[1]/div/div/div/div[4]/div')
+        browser.execute_script("arguments[0].click();", ese_sign_in)
+        time.sleep(50)
+
+        ese_user_email = browser.find_element_by_xpath('//*[@placeholder="Enter your registered email"]')
+        ese_user_email.send_keys('liuyi@ecmsglobal.com')
+        time.sleep(5)
+        ese_user_pwd = browser.find_element_by_xpath('//*[@placeholder="********"]')
+        ese_user_pwd.send_keys('A123456789')
+        time.sleep(5)
+
+        # ese_rememberme = browser.find_elements_by_xpath('//*[@class="el-checkbox__inner"]')[1]
+        # browser.execute_script("arguments[0].click();", ese_rememberme)
+        ese_sign_in_btn = browser.find_element_by_xpath('/html/body/div[2]/div/div[2]/div/div/form/div[4]/button[1]/span')
+        ese_sign_in_btn.click()
+
+        time.sleep(50)
+
+
+
+
+
+
+
+
+
+
+
         ese_shipper_contactname1 = browser.find_elements_by_xpath('//*[@class="el-input__inner"]')[1]
         # ese_shipper_contactname1 = browser.find_element_by_xpath('//*[@placeholder="Full Name"]')
         ese_shipper_contactname1.send_keys(str(ese_shipper_contactname))

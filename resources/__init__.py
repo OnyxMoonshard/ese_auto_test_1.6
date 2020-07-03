@@ -18,7 +18,7 @@ tester = "auto_test"
 Smtp_Server = 'smtp.qiye.163.com'
 Smtp_Sender = 'jenkins@ecmsglobal.com'
 Smtp_Sender_Password = 'Ecms@2019xx'
-Smtp_Receiver = ['[liuyi@ecmsglobal.com]']
+Smtp_Receiver = ['liuyi@ecmsglobal.com']
 #Smtp_Receiver = ['auto_test@ecmsglobal.com']
 Smtp_Receiver_pre = ['']
 

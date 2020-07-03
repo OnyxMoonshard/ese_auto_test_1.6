@@ -21,7 +21,7 @@ class PublicCase4_1(unittest.TestCase):
         ese_export_reason1 = browser.find_element_by_xpath('/html/body/div[2]/div[1]/div[1]/ul/li[3]/span')
         browser.execute_script("arguments[0].click();", ese_export_reason1)
 
-        time.sleep(5)
+        time.sleep(1)
 
         ese_commercial_invoice = browser.find_element_by_xpath(
             '//*[@id="app"]/div/div[2]/section/div/div/div[2]/form/div[2]/div[2]/div/div[2]/label')

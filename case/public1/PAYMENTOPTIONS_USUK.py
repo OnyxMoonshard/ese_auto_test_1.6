@@ -11,12 +11,14 @@ class PublicCase6_1(unittest.TestCase):
         # iframe = browser.find_elements_by_tag_name('iframe')[0]
         # browser.switch_to.frame(iframe)
 
+
         browser.switch_to.frame("myFrame")
+        browser.switch_to.frame("__privateStripeFrame5")
 
         # WebDriverWait(browser, 50, 0.5).until(EC.presence_of_element_located((By.NAME, 'cardnumber')))
-        '''
-        ese_pay_cardno = browser.find_element_by_xpath( '//input[@class="InputElement is-empty Input Input--empty"and @name="cardnumber"]')
-        ese_pay_cardno.send_keys(int(self.ese_pay_cardno))
+
+        # ese_pay_cardno = browser.find_element_by_xpath( '//input[@class="InputElement is-empty Input Input--empty"and @name="cardnumber"]')
+        # ese_pay_cardno.send_keys(int(self.ese_pay_cardno))
 
 
 
@@ -45,11 +47,15 @@ class PublicCase6_1(unittest.TestCase):
         time.sleep(5)
         ese_pay_postcode1 = browser.find_element_by_name('postal')
         ese_pay_postcode1.send_keys(int(ese_pay_postcode))
-
+        '''
 
 
         browser.switch_to.default_content()
-        ese_pay_pay_btn = browser.find_elements_by_xpath('//*[@class="pay-with-stripe"]')[0]
+        time.sleep(5)
+        browser.switch_to.frame("myFrame")
+        # ese_pay_pay_btn = browser.find_element_by_xpath('//*[@id="button-text"]')
+        # ese_pay_pay_btn = browser.find_element_by_xpath('//*[@id="submit"]')
+        ese_pay_pay_btn = browser.find_element_by_id('submit')
         ese_pay_pay_btn.click()
 
         time.sleep(20)
